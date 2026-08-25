@@ -15,7 +15,9 @@ function getDataMeteo()
 {
     $city = get_option('city');
     $unit = get_option('unit');
-    $api_url = 'https://api.openweathermap.org/data/2.5/weather?q=' . $city . '&units=' . $unit . '&lang=fr&appid=92c3fd34ea87fe572aaad5a6f99029fb';
+    // Définir cette valeur localement avant d'utiliser le plugin. Ne jamais committer une clé.
+    $api_key = 'YOUR_OPENWEATHER_API_KEY';
+    $api_url = 'https://api.openweathermap.org/data/2.5/weather?q=' . $city . '&units=' . $unit . '&lang=fr&appid=' . $api_key;
 
     //set your own error handler before the call
     set_error_handler(function ($err_severity, $err_msg, $err_file, $err_line, array $err_context) {
